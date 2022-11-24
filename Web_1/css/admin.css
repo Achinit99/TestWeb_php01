@@ -28,6 +28,10 @@ Theme: Food Order Website Admin;
   width: 100%;
 }
 
+.tbl-30 {
+  width: 30%;
+}
+
 table tr th {
   border-bottom: 1px solid black;
   padding: 1%;
