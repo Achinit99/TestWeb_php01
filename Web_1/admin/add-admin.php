@@ -42,13 +42,32 @@
 <?php include('partials/footer.php'); ?>
 
 <?php
-$connection =mysqli_connect('localhost','root','','food_order');
+//$connection =mysqli_connect('localhost','root','','food_order');
 
-if(mysqli_connect_errno())
+//if(mysqli_connect_errno())
+//{
+ //   die ('Database connection fail');
+//}else
+//{
+ //    echo "Connection success";
+//}
+
+
+
+// Process the Value from Form and Save it in Database
+
+// Check whether the submit button is clicked or not
+
+if(isset($_POST['submit']))
 {
-    die ('Database connection fail');
-}else
-{
-     echo "Connection success";
+    // Button Clicked
+    echo "Button clicked";
 }
+else
+{
+    // Button Not Clicked
+    echo "Button not clicked";
+}
+
+
 ?>
