@@ -1,10 +1,30 @@
-<?php include('partials/menu.php'); ?>
+<?php include('partials/menu.php'); 
+$connection =mysqli_connect('localhost','root','','food_order'); //Database connection
+
+
+if(isset($_POST['submit']))
+{
+        // 1.Get the Data from form
+        $full_name = $_POST['full_name'];
+        $username = $_POST['username'];
+        $password = md5($_POST['password']); //Password Encryption with MD5
+
+
+        // 2.SQL Query to Save the data into database
+        $sql = "INSERT INTO tbl_admin (full_name,username,password) VALUES('$full_name','$username','$password')";
+
+        $res= mysqli_query($connection,$sql);
+          
+
+        
+}
+?>
 
 <div class="main-content">
     <div class="wrapper">
         <h1>Add Admin</h1><br><br>
 
-        <form action="" method="POST">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
             <table class="tbl-30">
                 <tr>
                     <td>Full Name:</td>
@@ -41,7 +61,7 @@
 
 <?php include('partials/footer.php'); ?>
 
-<?php
+
 //$connection =mysqli_connect('localhost','root','','food_order');
 
 //if(mysqli_connect_errno())
@@ -58,27 +78,3 @@
 
 // Check whether the submit button is clicked or not
 
-if(isset($_POST['submit']))
-{
-        // 1.Get the Data from form
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = md5($_POST['password']); //Password Encryption with MD5
-
-
-        // 2.SQL Query to Save the data into database
-        $sql = "INSERT INTO tbl_admin SET
-            full_name = '$full_name',
-            username = '$username',
-            password = '$password'
-            ";
-
-
-        // 3.Execute Query and Save Data in Database
-        $connection =mysqli_connect('localhost','root','','food_order'); //Database connection
-
-        // $res = mysqli_query($conn, $sql) or die(mysqli_error());
-}
-
-
-?>
