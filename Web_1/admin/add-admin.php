@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
 
         // 3.Executing Query and Saving Data into Database
         $res= mysqli_query($connection,$sql);
-                  
+                     
 }
 ?>
 
