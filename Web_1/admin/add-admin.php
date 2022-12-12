@@ -13,10 +13,9 @@ if(isset($_POST['submit']))
         // 2.SQL Query to Save the data into database
         $sql = "INSERT INTO tbl_admin (full_name,username,password) VALUES('$full_name','$username','$password')";
 
+        // 3.Executing Query and Saving Data into Database
         $res= mysqli_query($connection,$sql);
-          
-
-        
+                  
 }
 ?>
 
